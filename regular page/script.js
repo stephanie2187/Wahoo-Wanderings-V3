@@ -121,24 +121,66 @@ document.addEventListener('DOMContentLoaded', function() {
 
     var newcomb = L.marker([ 38.0359352431111, -78.50647493710946]).addTo(map);
     newcomb.bindPopup("Newcomb Dining Hall");
+    
+    var clemmons = L.marker([38.036230695353275, -78.50605424721016]).addTo(map);
+    clemmons.bindPopup("Filled with tutoring, media, advising, and study resources.");
+
+    var shannon = L.marker([38.0363665057579, -78.50521818872794]).addTo(map);
+    shannon.bindPopup("UVA’s main library, recently renamed for UVA’s 1959-1974 President.");
+
+    var fralin = L.marker([38.03829382157879, -78.50303795962874]).addTo(map);
+    fralin.bindPopup("UVA’s art museum features rotating exhibitions, always free for students.");
+
+    var artsCommons = L.marker([38.03954975416786, -78.50368438419301]).addTo(map);
+    artsCommons.bindPopup("UVA’s art museum features rotating exhibitions, always free for students.");
+
+    var fineArts = L.marker([38.03897567463829, -78.50346051342497]).addTo(map);
+    fineArts.bindPopup("Lesser-visited library with research support in classical and art-related topics.");
+
+    var finch = L.marker([38.03514523299827, -78.50022644231136]).addTo(map);
+    finch.bindPopup("Small business owned boutique, outfits for every UVA occasion.");
+
+    var inka = L.marker([38.03456788150088, -78.49963251544098]).addTo(map);
+    finch.bindPopup("Local grill featuring Peruvian flavors on the Corner.");
+
+    var heartwood = L.marker([38.03581872950635, -78.50053920358393]).addTo(map);
+    finch.bindPopup("Hidden bookstore on the Corner featuring pieces from unique genres.");
+
+    var soul = L.marker([38.030906363168455, -78.47951810460219]).addTo(map);
+    soul.bindPopup("Local joint serving classic soul food and new twists.");
+
+    var violet = L.marker([38.030740855875, -78.48254179757707]).addTo(map);
+    violet.bindPopup("Cozy cinema with classic and independent movie varieties.");
+
+    var low = L.marker([38.029487163372636, -78.47875027905268]).addTo(map);
+    low.bindPopup("Curated vintage and vinyl selections.");
+
+    var puerto = L.marker([38.05148503927206, -78.4988944141228]).addTo(map);
+    puerto.bindPopup("Reliable Mexican restaurant with friendly staff and service.");
+
+    var virginia = L.marker([38.05152813173429, -78.50196141152928]).addTo(map);
+    puerto.bindPopup("Unique Virginia-themed gifts and products.");
+
+    var outdoor = L.marker([38.05297992090396, -78.50112820863203]).addTo(map);
+    outdoor.bindPopup("VA/NC outdoor gear sellers to explore our backyard.");
 
 
     var circles = [
         //On Grounds Locations
-        {latlng: [38.03146861853904, -78.5137279680974], radius: 200, options: {color: '#0f4c5c', fillColor: '#fb8b24', fillOpacity: 1}, popupContent: "Scott Location 1: Head over to this energetic venue on fall weekends"},
-        {latlng: [38.046362307664666, -78.50696837839942], radius: 200, options: {color: '#0f4c5c', fillColor: '#fb8b24', fillOpacity: 1}, popupContent: "JPJ Location 2: Take a stroll or catch the bus to this center of entertainment"},
-        {latlng: [38.0336925083408, -78.51364378385784], radius: 100, options: {color: '#0f4c5c', fillColor: '#fb8b24', fillOpacity: 1}, popupContent: "AFC Location 3: Push yourself to the limits at this spot popular around-the-clock"},
-        {latlng: [38.038979349625585, -78.50815506851339], radius: 150, options: {color: '#0f4c5c', fillColor: '#fb8b24', fillOpacity: 1}, popupContent: "Alumni Location 4: Check out an event here within the first few weeks of school"},
-        {latlng: [38.03670436591803, -78.50616479919685], radius: 120, options: {color: '#0f4c5c', fillColor: '#fb8b24', fillOpacity: 1}, popupContent: "Libraries Location 5: Discover which floors are your favorite"},
-        {latlng: [38.03839277648057, -78.50283030193668], radius: 230, options: {color: '#0f4c5c', fillColor: '#fb8b24', fillOpacity: 1}, popupContent: "Arts Grounds Location 6: Wander over to get your creativity flowing"},
-        {latlng: [38.0346071998912, -78.5040759983814], radius: 150, options: {color: '#0f4c5c', fillColor: '#fb8b24', fillOpacity: 1}, popupContent: "Lawn Location 7: A historical spot for a sunny picnic"},
-        {latlng: [38.034966193265916, -78.52149712896262], radius: 250, options: {color: '#0f4c5c', fillColor: '#fb8b24', fillOpacity: 1}, popupContent: "Ohill Trails Location 8: Get lost in nature after a good meal"},
+        {latlng: [38.03146861853904, -78.5137279680974], radius: 200, options: {color: '#0f4c5c', fillColor: '#fb8b24', fillOpacity: 1}, popupContent: "Location 1: Head over to this energetic venue on fall weekends"},
+        {latlng: [38.046362307664666, -78.50696837839942], radius: 200, options: {color: '#0f4c5c', fillColor: '#fb8b24', fillOpacity: 1}, popupContent: "Location 2: Take a stroll or catch the bus to this center of entertainment"},
+        {latlng: [38.0336925083408, -78.51364378385784], radius: 100, options: {color: '#0f4c5c', fillColor: '#fb8b24', fillOpacity: 1}, popupContent: "Location 3: Push yourself to the limits at this spot popular around-the-clock"},
+        {latlng: [38.038979349625585, -78.50815506851339], radius: 150, options: {color: '#0f4c5c', fillColor: '#fb8b24', fillOpacity: 1}, popupContent: "Location 4: Check out an event here within the first few weeks of school"},
+        {latlng: [38.03670436591803, -78.50616479919685], radius: 120, options: {color: '#0f4c5c', fillColor: '#fb8b24', fillOpacity: 1}, popupContent: "Location 5: Discover which floors are your favorite"},
+        {latlng: [38.03839277648057, -78.50283030193668], radius: 230, options: {color: '#0f4c5c', fillColor: '#fb8b24', fillOpacity: 1}, popupContent: "Location 6: Wander over to get your creativity flowing"},
+        {latlng: [38.0346071998912, -78.5040759983814], radius: 150, options: {color: '#0f4c5c', fillColor: '#fb8b24', fillOpacity: 1}, popupContent: "Location 7: A historical spot for a sunny picnic"},
+        {latlng: [38.034966193265916, -78.52149712896262], radius: 250, options: {color: '#0f4c5c', fillColor: '#fb8b24', fillOpacity: 1}, popupContent: "Location 8: Get lost in nature after a good meal"},
         
         //Off Grounds Locations
-        {latlng: [38.03441703692699, -78.50008047941772], radius: 150, options: {color: '#fb8b24', fillColor: '#0f4c5c', fillOpacity: 1}, popupContent: "Corner Location 9: Eat, shop, and hang out"},
-        {latlng: [38.03075051876609, -78.48084024205902], radius: 250, options: {color: '#fb8b24', fillColor: '#0f4c5c', fillOpacity: 1}, popupContent: "Downtown Location 10: Get a feel for the local Charlottesville scene"},
-        {latlng: [38.03833607325096, -78.49103540317081], radius: 250, options: {color: '#fb8b24', fillColor: '#0f4c5c', fillOpacity: 1}, popupContent: "Dairy Location 11: Sample flavors of the Charlottesville community"},
-        {latlng: [38.051270274500226, -78.50237768101981], radius: 300, options: {color: '#fb8b24', fillColor: '#0f4c5c', fillOpacity: 1}, popupContent: "Barracks Location 12: Catch the bus here to restock on essential study snacks"},
+        {latlng: [38.03441703692699, -78.50008047941772], radius: 150, options: {color: '#fb8b24', fillColor: '#0f4c5c', fillOpacity: 1}, popupContent: "Location 9: Eat, shop, and hang out"},
+        {latlng: [38.03075051876609, -78.48084024205902], radius: 250, options: {color: '#fb8b24', fillColor: '#0f4c5c', fillOpacity: 1}, popupContent: "Location 10: Get a feel for the local Charlottesville scene"},
+        {latlng: [38.03833607325096, -78.49103540317081], radius: 250, options: {color: '#fb8b24', fillColor: '#0f4c5c', fillOpacity: 1}, popupContent: "Location 11: Sample flavors of the Charlottesville community"},
+        {latlng: [38.051270274500226, -78.50237768101981], radius: 300, options: {color: '#fb8b24', fillColor: '#0f4c5c', fillOpacity: 1}, popupContent: "Location 12: Catch the bus here to restock on essential study snacks"},
     ];
     
 
