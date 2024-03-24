@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.maps.ExploreCVille.ExploreCVilleApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.807 s -- in com.maps.ExploreCVille.ExploreCVilleApplicationTests
