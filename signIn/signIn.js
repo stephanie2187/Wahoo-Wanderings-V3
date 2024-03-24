@@ -19,9 +19,9 @@ function handleLogin() {
         xhr.onreadystatechange = function () {
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 if (xhr.status === 200) {
-                    const response = JSON.parse(xhr.responseText);
-                    validity = response.value;
-                    placesVisited = response.strings;
+                    const response = xhr.responseText
+                    validity = JSON.parse(response[0])
+                    placesVisited = response.slice(1)
 
                     clearInterval(interval);
                     newTab.close();
