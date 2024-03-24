@@ -6,32 +6,31 @@ document.addEventListener('keypress',function(event){
         const username = usernameInput.value
         const password = passwordInput.value
 
-        const url = `https://wahoowanderings.co/user/addUser/${username}/${password}`
-
-        var newTab = window.open(url,'_blank')
+        const url = `http://wahoo.us-east-1.elasticbeanstalk.com/user/addUser/${username}/${password}`;
 
         let validity;
         let placesVisited;
-        var interval = setInterval(function(){
-            const xhr = new XMLHttpRequest()
-            xhr.open('GET',url,true)
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState === XMLHttpRequest.DONE) {
-                    if (xhr.status===200){
-                        const response = JSON.parse(xhr.responseText)
-                    validity = JSON.parse(response[0])
-                    placesVisited = response.slice(1)
-
-
-                        clearInterval(interval)
-                        newTab.close();
+        var interval = setInterval(function () {
+            fetch(url)
+                .then(response => {
+                    if (response.ok) {
+                        return response.json();
                     }
-                }
-            }
-            xhr.send()
-        },200)
+                    throw new Error('Network response was not ok.');
+                })
+                .then(data => {
+                    validity = JSON.parse(data[0]);
+                    placesVisited = data.slice(1);
+                    clearInterval(interval);
+                })
+                .catch(error => {
+                    console.error('There was a problem with the fetch operation:', error);
+                });
+        }, 200);
+
 
         if (validity===true){
+            localStorage.setItem('username',JSON.stringify(username))
             localStorage.setItem('placesVisited',JSON.stringify(placesVisited))
             localStorage.setItem('isLoggedIn',JSON.stringify(true))
             window.location.href = 'https://wahoowanderings.co'

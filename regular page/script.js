@@ -1,18 +1,15 @@
-//const username = localStorate.getItem('username') 
-const username = "hernando"
-//const isLoggedIn = localStorage.getItem('isLoggedIn');
-// const placesVisited = localStorage.getItem('placesVisited');
+const username = JSON.parse(localStorage.getItem('username'))
+const isLoggedIn = JSON.parse(localStorage.getItem('isLoggedIn'));
+const placesVisited = JSON.parse(localStorage.getItem('placesVisited'));
 
-// if (!isLoggedIn){
-//     window.location.href = "wahoowanderings.co/signin"
-// }
+if (!isLoggedIn){
+    window.location.href = "https://signin.wahoowanderings.co"
+}
 
 
 var numPlaces = 0;
 
-const title = document.querySelector(
-    '.title'
-)
+
 
 
 // Define an object to store the original text for each checkbox
@@ -163,7 +160,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('click',function(event){
         if (event.target.classList.contains("checkbox")){
             toggleCrossOut(event.target)
-            url = `https://wahoowanderings.co/user/${username}/visited/${getPlaceName(event.target.id)}/`
+            url = `http://wahoo.us-east-1.elasticbeanstalk.com/user/${username}/visited/${getPlaceName(event.target.id)}/`
             if (!event.target.checked){
                 allLayers[parseInt(event.target.id.substring(3))-1].addTo(map)
                 url+='false'

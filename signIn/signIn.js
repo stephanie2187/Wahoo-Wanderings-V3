@@ -7,31 +7,30 @@ function handleLogin() {
     const username = usernameInput.value;
     const password = passwordInput.value;
 
-    const url = `https://wahoowanderings.co/user/signin/${username}/${password}`;
+    const url = `http://wahoo.us-east-1.elasticbeanstalk.com/user/signin/${username}/${password}`;
 
-    var newTab = window.open(url, '_blank');
-
-    let validity;
-    let placesVisited;
-    var interval = setInterval(function () {
-        const xhr = new XMLHttpRequest();
-        xhr.open('GET', url, true);
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === XMLHttpRequest.DONE) {
-                if (xhr.status === 200) {
-                    const response = xhr.responseText
-                    validity = JSON.parse(response[0])
-                    placesVisited = response.slice(1)
-
+        let validity;
+        let placesVisited;
+        var interval = setInterval(function () {
+            fetch(url)
+                .then(response => {
+                    if (response.ok) {
+                        return response.json();
+                    }
+                    throw new Error('Network response was not ok.');
+                })
+                .then(data => {
+                    validity = JSON.parse(data[0]);
+                    placesVisited = data.slice(1);
                     clearInterval(interval);
-                    newTab.close();
-                }
-            }
-        };
-        xhr.send();
-    }, 200);
+                })
+                .catch(error => {
+                    console.error('There was a problem with the fetch operation:', error);
+                });
+        }, 200);
 
     if (validity === true) {
+        localStorage.setItem('username',JSON.stringify(username))
         localStorage.setItem('placesVisited', JSON.stringify(placesVisited));
         localStorage.setItem('isLoggedIn', JSON.stringify(true));
         window.location.href = 'https://wahoowanderings.co';
