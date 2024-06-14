@@ -1,17 +1,17 @@
 # Inspiration:
-Charlottesville's vibrant, tight-knit community, which often goes largely undiscovered by students- especially first years.
+For UVA's 2024 HooHacks hackathon, we were inspired by Charlottesville's vibrant, tight-knit community, which often goes largely undiscovered by students- especially first years.
 
 # What it does:
-Gives students a list of mysterious objectives with written/visual hints to guide them around Charlottesville attractions. Aimed towards new students who are less familiar with Grounds and the surrounding area.
+Gives students a list of mysterious objectives with written/visual hints to guide them around Charlottesville attractions and "gamify" the process. Aimed towards new students who are less familiar with Grounds and the surrounding area.
 
 # How we built it:
 Used a Java-based backend to create a database storing users' past visited locations and how many map objectives they have completed. On the frontend, combined HTML/CSS/JS with Leaflet for map functionality and Bootstrap for cohesive design.
 
 # Challenges we ran into:
-We were not ultimately able to connect the back and front ends in the way we had initially envisioned. Also encountered issues with creating/validating new users and their login credentials.
+We were not ultimately able to connect the back and front ends in the way we had initially envisioned because of issues creating/validating new users and their login credentials.
 
 # Accomplishments that we're proud of:
-Came in for our very first hackathon primarily equipped with Java knowledge, and very little of anything else- we were able to achieve basic functionality in countless tools and frameworks we had never used before HooHacks.
+Came in for our very first hackathon primarily equipped with Java knowledge, and very little of anything else- we were able to achieve basic functionality in countless tools and frameworks we had never used before HooHacks. When we found that the Maps API did not meet our unique needs on the frontend map component, we quickly pivoted to a new solution and implemented Leaflet for the first time.
 
 # What we learned:
 We learned that managing user data, with our current skillset, is ambitious and probably not realistic for a 24 hour hackathon. However, we learned that we are able to push our limits further than we ever imagined previously.
